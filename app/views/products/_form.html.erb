@@ -1,0 +1,12 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, :placeholder => 'Product Name' %>
+  <%= f.input :description , :input_html => { :rows => 5 }%>
+  <%= f.input :price %>
+  <%= f.input :invoice_id, :input_html => {:readonly => "readonly"} %>
+  
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                { :controller => "invoices", :action => "index" }, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,84 @@
+<%- model_class = @invoice.class -%>
+
+<div class="container" style="width:666px">
+  
+  <div class="header">
+      <div class="logo">Cybrilla</div>
+      <div class="address"><p>#48, Varsha, 2nd Main, 1st Block, Koramangala, Bangalore - 34</br> Email: <span style="color:#4040ff"><u>contact@cybrilla.com</u></span></p></div>
+  </div>
+
+  
+  
+<ul class="invo_static">
+  <h2>INVOICE</h2>
+  <dt><strong>Invoice Date:</strong></dt>
+  <dd>&nbsp<%= @invoice.date.strftime("%d/%m/%Y") %></dd>
+  <dt><strong>Invoice #:</strong><dt>
+  <dd>&nbsp<%= @invoice.id %></dd>
+  <div class="pan_number">Cybrilla Technologies Private Limited</br> PAN NUMBER :: AAECC1405A
+</br>Service Tax Code(Registration Number) :: AAECC1405ASD001</div>
+  
+</ul>
+
+<ul class="billing">
+<li class="blue_sprites"></li>
+<li>Bill To:</li>
+<li class="blue_sprites"></li>
+<li><strong><%= @invoice.client.name %></br></strong><%= @invoice.client.address %></li>
+<li class="blue_sprites"></li>
+
+</ul>
+
+
+    <table height="200px" class="table-bordered" cellspacing="5" cellpadding="5" RULES=GROUPS  FRAME=BOX>
+        <thead >
+          <tr class="table-bordered">
+            <th width="131px">ITEM</th>
+            <th width="400px">DESCRIPTION</th>
+            <th width="131px">AMOUNT (&#x20b9)</th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @invoice.products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td align="right"> <strong><%= "%.2f" % product.price %></strong></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td height="50px"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        
+          <tr align="right">
+            <td td rowspan=2></td>
+            <td>Service Tax @<%= @invoice.tax_percentage %> %</td>
+            <td><strong><%= "%.2f" % @invoice.total_tax %></strong></td>
+          </tr>
+          
+              <tr align="right">
+                <td>TOTAL</td>
+                <td><strong><%= "%.2f" % @invoice.total_value_with_tax %></strong></td>
+              </tr>
+          <tr align="right">
+            <td td rowspan=2></td>
+            <td>Payment Status</td>
+            <td align="center"><strong><%= @invoice.status.name.upcase %></strong></td>
+          </tr>
+      </tbody>
+    </table>
+    <div class="btn print"><a HREF="javascript:window.print()">Print</a></div>
+
+
+
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              invoices_path, :class => 'btn'  %>
+  
+  
+
+</div>

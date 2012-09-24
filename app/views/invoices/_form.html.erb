@@ -1,0 +1,13 @@
+<%= simple_form_for @invoice, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :date %>
+  <%= f.input :tax_percentage, :required => true %>
+  <%= f.input :client_id, :collection => Client.all, :include_blank => false %>
+  <%= f.input :status_id, :collection => Status.all, :include_blank => false %>
+  
+  
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invoices_path, :class => 'btn' %>
+  </div>
+<% end %>

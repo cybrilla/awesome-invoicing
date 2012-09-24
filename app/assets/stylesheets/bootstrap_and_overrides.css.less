@@ -1,0 +1,108 @@
+@import "twitter/bootstrap/bootstrap";
+.products {
+margin-left:161px
+}
+
+
+.header, .billing{
+	overflow: hidden;
+	margin-bottom: 90px;
+}
+
+.logo {
+	background: url("/assets/logo.png") ;
+	height: 60px;
+	width: 188px;
+	text-indent: -9999px;
+	float: left;
+}
+
+.address {
+	float: right;
+	width: 200px;
+	font: 14px Arial, sans-serif;
+}
+
+
+.invo_static dt {
+	float: left;
+}
+
+.pan_number {
+	font-weight: bold;
+}
+
+.print{
+	margin-top: 15px;
+}
+
+.print a{
+	text-decoration:none;
+}
+
+
+
+
+
+.blue_sprites{
+	height:3px;
+	width:320px;
+	background-color: #4f81bd;
+	margin:5px 0px;
+}
+
+.billing {
+	width :320px;
+}
+
+ul li{
+	list-style-type:none;
+}
+
+
+ul li:nth-child(2){
+	margin-left:10px;
+	font-weight: bold;
+	font-size:14px;
+}
+
+
+ul li:nth-child(4){
+	min-height:102px;
+	font-size: 18px;
+	margin-left:10px;
+	line-height:23px
+}
+
+
+
+
+
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
+@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
+@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
+@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
+@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
+
+// Font Awesome
+@import "fontawesome";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
