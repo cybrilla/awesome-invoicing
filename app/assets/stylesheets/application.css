@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
 */
+
+// Simple Form css
+
+.simple_form .signup-form{
+
+  width: 20%;
+  margin: auto;
+
+}

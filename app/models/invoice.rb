@@ -5,7 +5,9 @@ class Invoice < ActiveRecord::Base
   belongs_to :client
   has_many :products
   
-  attr_accessible :date, :tax_percentage, :status_id, :client_id
+  accepts_nested_attributes_for :products ,:allow_destroy => true
+  
+  attr_accessible :date, :tax_percentage, :status_id, :client_id, :products_attributes
   
   def total_value
     value = 0

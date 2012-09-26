@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: invo_development
+  database: invoice_development
   pool: 5
   username: root
-  password:
+  password: dalvir
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,18 +25,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: invo_appm_test
+  database: invoice_test
   pool: 5
   username: root
-  password:
+  password: dalvir
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: invo_appm_production
+  database: invoice_production
   pool: 5
   username: root
-  password:
+  password: dalvir
   socket: /var/run/mysqld/mysqld.sock

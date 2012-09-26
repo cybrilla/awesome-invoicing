@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>InvoAppm</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Cybrilla Technologies</a>
+      <% if( user_signed_in? ) %>
+        <ul class="nav">
+          <li class="active"><a href="#">Invoices</a></li>
+          <li><a href="#">Clients</a></li>
+        </ul>
+        
+        <ul class = "nav pull-right" >
+          <li class="dropdown">
+            <% if( user_signed_in? ) %>
+              <%= link_to "Signout", destroy_user_session_path, :method => "delete"  %> 
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+</div>
+  
 </head>
 <body>
+<div class="container"> 
 
+  <%= yield %>
 
-<%= yield %>
-
+</div>
 </body>
 </html>

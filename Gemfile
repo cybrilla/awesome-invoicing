@@ -7,6 +7,12 @@ gem 'rails', '3.2.3'
 
 gem 'mysql2'
 
+#Adding device for User authentication
+gem 'devise'
+
+#Adding Nested Form gem
+gem "nested_form"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,6 +33,8 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
 end
+
+gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

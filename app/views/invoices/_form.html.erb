@@ -10,4 +10,23 @@
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 invoices_path, :class => 'btn' %>
   </div>
+  <%= simple_nested_form_for @invoice do |f| %>
+  <%#=  f.fields_for :products %>
+  
+  <%= f.simple_fields_for :products do |product_form| %>
+  <div class = "form-actions">
+    <%#= product_form.label :name %>
+    <%= product_form.input :name, :placeholder => 'Product Name' %>
+    <%#= product_form.label :description %>
+    <%= product_form.input :description , :input_html => { :rows => 5 }%>
+    <%#= product_form.label :price %>
+    <%= product_form.input :price %>
+    <br/>
+    
+    <%= product_form.link_to_remove "Remove this task" %>
+    </div>
+  <% end %>
+
+  <p><%= f.link_to_add "Add a task", :products %></p>
+  <% end %>
 <% end %>
