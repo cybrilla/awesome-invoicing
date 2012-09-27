@@ -2,8 +2,16 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all
-
+    @invoices = Invoice.order(:created_at)
+    
+    if params[:status_id].present?
+      @invoices = @invoices.where(:status_id => params[:status_id])
+    end
+    
+    if params[:client_id].present?
+      @invoices = @invoices.where(:client_id => params[:client_id])
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @invoices }

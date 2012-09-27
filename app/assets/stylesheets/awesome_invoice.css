@@ -1,0 +1,13 @@
+.form-filter {
+  float: right;
+}
+
+.form-filter select {
+  margin:5px;
+}
+
+.form-filter label{
+  font-weight: bold;
+  font-size: 15px;  
+
+}
