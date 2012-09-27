@@ -24,7 +24,7 @@
 <li class="blue_sprites"></li>
 <li>Bill To:</li>
 <li class="blue_sprites"></li>
-<li><strong><%= @invoice.client.name %></br></strong><%= @invoice.client.address %></li>
+<li><strong><%= @invoice.try(:client).try(:name) %></br></strong><%= @invoice.try(:client).try(:address) %></li>
 <li class="blue_sprites"></li>
 
 </ul>

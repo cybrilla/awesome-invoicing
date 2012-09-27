@@ -4,6 +4,7 @@ InvoAppm::Application.routes.draw do
   resources :products
 
   resources :invoices
+  resources :clients
   
   get "home/index"
 

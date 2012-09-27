@@ -11,8 +11,8 @@
       <a class="brand" href="#">Cybrilla Technologies</a>
       <% if( user_signed_in? ) %>
         <ul class="nav">
-          <li class="active"><a href="#">Invoices</a></li>
-          <li><a href="#">Clients</a></li>
+          <li class="active"><a href="<%= root_path %>">Invoices</a></li>
+          <li><a href="<%= clients_path %>">Clients</a></li>
         </ul>
         
         <ul class = "nav pull-right" >
