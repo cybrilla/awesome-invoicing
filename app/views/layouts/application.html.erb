@@ -8,7 +8,7 @@
   
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">Cybrilla Technologies</a>
+      <%= link_to "Cybrilla Technologies", root_path, :class => "brand" %>
       <% if( user_signed_in? ) %>
         <ul class="nav">
           <li class="active"><a href="<%= root_path %>">Invoices</a></li>
