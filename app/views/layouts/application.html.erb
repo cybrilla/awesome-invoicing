@@ -6,13 +6,13 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   
-  <div class="navbar">
+  <div class="navbar noPrint">
     <div class="navbar-inner">
       <%= link_to "Cybrilla Technologies", root_path, :class => "brand" %>
       <% if( user_signed_in? ) %>
         <ul class="nav">
-          <li class="<%= (params[:controller].to_s == 'invoices') ? 'active' : ''  %>"><%= link_to 'Invoices', root_path %></li>
-          <li class="<%= (params[:controller].to_s == 'clients') ? 'active' : ''  %>"><%= link_to 'Clients', clients_path %></li>
+          <li class="active"><%= link_to "Invoices", root_path %></li>
+          <li><%= link_to "Clients", clients_path %></li>
         </ul>
         
         <ul class = "nav pull-right" >

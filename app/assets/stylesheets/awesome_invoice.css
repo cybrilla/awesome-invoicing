@@ -17,10 +17,13 @@
 }
 
 @media print {
-.noPrint {
-    display:none;
+  .noPrint {
+      display: none;
+      visibility: hidden;
+  }
 }
-}
+
 .table-invoice {
   border-collapse: collapse !important;
 }
+
