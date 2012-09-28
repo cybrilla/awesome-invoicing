@@ -13,6 +13,8 @@ gem 'devise'
 #Adding Nested Form gem
 gem "nested_form"
 
+#Adding Postgres gem for Heroku
+gem "pg"
 
 # Gems used only for assets and not required
 # in production environments by default.
