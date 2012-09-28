@@ -1,6 +1,6 @@
 <%= simple_form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name, :required => true %>
-  <%= f.input :address, :required => true %>
+  <%= f.input :address, :required => true, :input_html => { :cols => 40, :rows => 5 } %>
   <%= f.input :contact_person_name, :required => true %>
   <%= f.input :contact_person_number, :required => true %>
   <%= f.input :contact_person_email, :required => true %>

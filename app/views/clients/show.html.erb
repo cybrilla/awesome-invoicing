@@ -2,36 +2,91 @@
 <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
                                :default => "Details for #{model_class.model_name.human} #{@client.name}") %></h1>
 
+
 <table class="table table-striped">
-  <thead >
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:contact_person_name) %></th>
-      <th><%= model_class.human_attribute_name(:contact_person_number) %></th>
-      <th><%= model_class.human_attribute_name(:contact_person_email) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
+      <td>Name</td>
       <td><%= @client.name %></td>
+    </tr>
+    <tr>
+      <td>Address</td>
       <td><%= @client.address %></td>
+    </tr>
+    <tr>
+      <td>Contact person name</td>
       <td><%= @client.contact_person_name %></td>
+    </tr>
+    <tr>
+      <td>Contact person number</td>
       <td><%= @client.contact_person_number %></td>
+    </tr>
+    <tr>
+      <td>Contact person email</td>
       <td><%= @client.contact_person_email %></td>
+    </tr>
+    <tr>
+      <td>Created at</td>
       <td><%=l @client.created_at %></td>
-      <td>
-        
-        <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                    edit_client_path(@client), :class => '' %><br/>
-        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                    client_path(@client),
-                    :method => :delete,
-                    :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-                    :class => '' %><br/>
-      </td>
     </tr>
   </tbody>
 </table>
+
+<%= link_to t('.edit', :default => t("helpers.links.edit client")),
+                    edit_client_path(@client), :class => '' %></br></br>
+
+              
+<h1> Invoices </h1>
+  <% if @client.invoices.present? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CLIENT NAME</th>
+          <th>STATUS</th>
+          <th>INVOICE DATE</th>
+          <th class = "number">INVOICE AMOUNT</th>
+          <th class = "number">TAX</th>
+          <th class = "number">TOTAL AMOUNT</th>
+          
+          <th class = "number"><%=t '.actions', :default => t("helpers.actions") %></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% @client.invoices.each do |invoice| %>
+          <tr>
+            <td><%= link_to invoice.id, invoice_path(invoice) %></td>
+            <td><%= invoice.try(:client).try(:name) %></td>
+            <td><%= invoice.status.name %></td>        
+            <td><%= invoice.date.to_s(:human) %></td>
+            <td class = "number"><%= invoice.total_value %></td>
+            <td class = "number"><%= invoice.total_tax %></td>
+            <td class = "number"><%= invoice.total_value_with_tax %></td>
+            
+            <td class = "number">
+            
+              <%= link_to "Show Invoice", invoice, :class => '' %><br/>
+              
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_invoice_path(invoice), :class => '' %><br/>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          invoice_path(invoice),
+                          :method => :delete,
+                          :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                          :class => '' %><br/>
+    
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    No Invoices for client <%= @client.name %>
+  <% end %></br></br>
+  
+<%= link_to t('.back', :default => t("helpers.links.back to clients")),
+              clients_path, :class => 'btn'  %>
+
+
+
