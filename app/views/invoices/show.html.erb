@@ -30,9 +30,9 @@
 </ul>
 
 
-    <table height="200px" class="table-bordered" cellspacing="5" cellpadding="5" RULES=GROUPS  FRAME=BOX>
+    <table height="200px" class="table-bordered table-invoice" cellspacing="5" cellpadding="5" RULES=GROUPS  FRAME=BOX>
         <thead >
-          <tr class="table-bordered">
+          <tr>
             <th width="131px">ITEM</th>
             <th width="400px">DESCRIPTION</th>
             <th width="131px">AMOUNT (&#x20b9)</th>
@@ -63,7 +63,7 @@
                 <td><strong><%= "%.2f" % @invoice.total_value_with_tax %></strong></td>
               </tr>
           <tr align="right">
-            <td td rowspan=2></td>
+            <td></td>
             <td>Payment Status</td>
             <td align="center"><strong><%= @invoice.status.name.upcase %></strong></td>
           </tr>

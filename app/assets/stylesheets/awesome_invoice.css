@@ -21,3 +21,6 @@
     display:none;
 }
 }
+.table-invoice {
+  border-collapse: collapse !important;
+}

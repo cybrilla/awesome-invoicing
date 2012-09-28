@@ -35,7 +35,7 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= link_to invoice.id, invoice_path(invoice) %></td>
-        <td><%= invoice.client.name %></td>
+        <td><%= invoice.try(:client).try(:name) %></td>
         <td><%= invoice.status.name %></td>        
         <td><%= invoice.date.to_s(:human) %></td>
         <td class = "number"><%= invoice.total_value %></td>

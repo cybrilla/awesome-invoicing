@@ -11,8 +11,8 @@
       <%= link_to "Cybrilla Technologies", root_path, :class => "brand" %>
       <% if( user_signed_in? ) %>
         <ul class="nav">
-          <li class="active"><a href="<%= root_path %>">Invoices</a></li>
-          <li><a href="<%= clients_path %>">Clients</a></li>
+          <li class="<%= (params[:controller].to_s == 'invoices') ? 'active' : ''  %>"><%= link_to 'Invoices', root_path %></li>
+          <li class="<%= (params[:controller].to_s == 'clients') ? 'active' : ''  %>"><%= link_to 'Clients', clients_path %></li>
         </ul>
         
         <ul class = "nav pull-right" >
