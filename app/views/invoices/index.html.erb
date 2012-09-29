@@ -1,15 +1,15 @@
 <%- model_class = Invoice.new.class -%>
 
 
-<div class = "form-filter" style>
+<div class = "form-filter" >
   <% @statuses = Status.all;
      @clients = Client.all; %>
     
-    <%= label_tag 'filter', "Filter Options : " %>
-
+    
     <%= form_tag invoices_path, :method => "get" %>
-      <%= select_tag "status_id",options_from_collection_for_select(@statuses, "id", "name", params[:status_id]),:onchange => "this.form.submit();" %>
-      <%= select_tag "client_id",options_from_collection_for_select(@clients, "id", "name",params[:client_id]),:onchange => "this.form.submit();"  %>
+    Filer by Status : <%= select_tag "status_id",options_from_collection_for_select(@statuses, "id", "name", params[:status_id]),:onchange => "this.form.submit();" %> or Client : <%= select_tag "client_id",options_from_collection_for_select(@clients, "id", "name",params[:client_id]),:onchange => "this.form.submit();"  %>
+    
+      
       <%= link_to "Clear",invoices_path %>
 
 

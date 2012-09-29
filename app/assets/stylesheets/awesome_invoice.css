@@ -13,13 +13,17 @@
 
 .form-filter select {
   margin:5px;
+  width: 150px;
 }
 
-.form-filter label{
+.form-filter label {
   font-weight: bold;
-  font-size: 15px;  
+  font-size: 15px;
+  width: auto;
 
 }
+
+
 
 .table .number {
   text-align: right;  
