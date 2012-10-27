@@ -24,7 +24,7 @@
         <td><%= client.contact_person_name %></td>
         <td><%= client.contact_person_number %></td>
         <td><%= client.contact_person_email %></td>
-        <td><%=l client.created_at %></td>
+        <td><%= client.created_at.to_s(:human) %></td>
         <td>
         
           <%= link_to "Show Client", client, :class => '' %><br/>

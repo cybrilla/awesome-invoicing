@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <td>Created at</td>
-      <td><%=l @client.created_at %></td>
+      <td><%= @client.created_at.to_s(:human) %></td>
     </tr>
   </tbody>
 </table>
