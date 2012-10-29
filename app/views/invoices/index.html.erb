@@ -38,9 +38,9 @@
         <td><%= invoice.try(:client).try(:name) %></td>
         <td><%= invoice.status.name %></td>        
         <td><%= invoice.date.to_s(:human) %></td>
-        <td class = "number"><%= invoice.total_value %></td>
-        <td class = "number"><%= invoice.total_tax %></td>
-        <td class = "number"><%= invoice.total_value_with_tax %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_value %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_tax %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_value_with_tax %></td>
         
         <td class = "number">
         
