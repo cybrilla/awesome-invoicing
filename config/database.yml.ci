@@ -4,6 +4,6 @@ test:
   reconnect: false
   database: invoicing_test
   pool: 5
-  username: satish
+  username: ci_server
   password: hackerstop
   host: localhost
