@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  validates_presence_of :tax_percentage
+  validates_presence_of :tax_percentage, :date
 
   belongs_to :status
   belongs_to :client
