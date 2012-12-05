@@ -3,6 +3,7 @@ set :repository,  "git@github.com:cybrilla/awesome-invoicing.git"
 
 set :scm, :git
 set :deploy_via, :remote_cache
+set :rake, 'bundle exec rake'
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -14,7 +15,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
   task :symlink_config, roles: :app do
