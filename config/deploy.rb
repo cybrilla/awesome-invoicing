@@ -1,3 +1,4 @@
+require "rvm/capistrano" 
 set :application, "awesome-invoicing"
 set :repository,  "git@github.com:cybrilla/awesome-invoicing.git"
 
