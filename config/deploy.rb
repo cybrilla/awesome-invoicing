@@ -5,6 +5,10 @@ set :scm, :git
 set :deploy_via, :remote_cache
 set :rake, 'bundle exec rake'
 
+set :default_environment, {
+  'PATH' => "/opt/ruby-enterprise/bin/:$PATH"
+}
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
