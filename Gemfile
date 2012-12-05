@@ -14,7 +14,7 @@ gem 'devise'
 gem "nested_form"
 
 #RVM Capistrano gem
-gem "rvm-capistrano"
+gem "rvm-capistrano", ">= 1.1.0"
 
 gem 'simple_form'
 
