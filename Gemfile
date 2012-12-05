@@ -13,8 +13,6 @@ gem 'devise'
 #Adding Nested Form gem
 gem "nested_form"
 
-#Adding Postgres gem for Heroku
-gem "pg"
 
 gem 'simple_form'
 
