@@ -6,11 +6,12 @@ set :deploy_via, :remote_cache
 set :rake, 'bundle exec rake'
 
 
-set :rvm_ruby_string, 'ree@rails3'                     # Or:
-#set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"") # Read from local system
-set :rvm_type, :user  # Don't use system-wide RVM
+#set :rvm_ruby_string, 'ree@rails3'                     # Or:
+#set :rvm_ruby_string, ENV['GEM_HOME']                   # Read from local system
+#set :rvm_type, :user  # Don't use system-wide RVM
 
-require "rvm/capistrano"                               # Load RVM's capistrano plugin.
+require "rvm/capistrano" 
+require "bundler/capistrano"                              # Load RVM's capistrano plugin.
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
