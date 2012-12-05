@@ -5,10 +5,6 @@ set :scm, :git
 set :deploy_via, :remote_cache
 set :rake, 'bundle exec rake'
 
-set :default_environment, {
-  'PATH' => "/home/ubuntu/.rvm/gems/ruby-1.9.3-p327@global/bin/:$PATH"
-}
-
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 

@@ -13,6 +13,8 @@ gem 'devise'
 #Adding Nested Form gem
 gem "nested_form"
 
+#RVM Capistrano gem
+gem "rvm-capistrano"
 
 gem 'simple_form'
 
