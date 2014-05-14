@@ -11,7 +11,7 @@ development:
   reconnect: false
   database: invoicing_dev
   pool: 5
-  username: awesomeinvoice
+  username: root
   password: awesome
   host: localhost
 
@@ -24,7 +24,7 @@ test:
   reconnect: false
   database: invoicing_test
   pool: 5
-  username: awesomeinvoice
+  username: root
   password: awesome
   host: localhost
 
@@ -34,6 +34,6 @@ production:
   reconnect: false
   database: invoicing_prod
   pool: 5
-  username: awesomeinvoice
+  username: root
   password: awesome
   host: localhost
