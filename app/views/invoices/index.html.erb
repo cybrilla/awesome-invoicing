@@ -23,9 +23,9 @@
       <th>CLIENT NAME</th>
       <th>STATUS</th>
       <th>INVOICE DATE</th>
-      <th class = "number">INVOICE AMOUNT</th>
-      <th class = "number">TAX</th>
-      <th class = "number">TOTAL AMOUNT</th>
+      <th class = "number">INVOICE AMOUNT (&#x20b9)</th>
+      <th class = "number">TAX (&#x20b9)</th>
+      <th class = "number">TOTAL AMOUNT (&#x20b9)</th>
       
       <th class = "number"><%=t '.actions', :default => t("helpers.actions") %></th>
       
@@ -38,9 +38,9 @@
         <td><%= invoice.try(:client).try(:name) %></td>
         <td><%= invoice.status.name %></td>        
         <td><%= invoice.date.to_s(:human) %></td>
-        <td class = "number"><%= invoice.total_value %></td>
-        <td class = "number"><%= invoice.total_tax %></td>
-        <td class = "number"><%= invoice.total_value_with_tax %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_value %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_tax %></td>
+        <td class = "number"><%= "%.2f" % invoice.total_value_with_tax %></td>
         
         <td class = "number">
         

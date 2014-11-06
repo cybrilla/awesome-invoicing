@@ -12,7 +12,7 @@
 <ul class="invo_static">
   <h2>INVOICE</h2>
   <dt><strong>Invoice Date:</strong></dt>
-  <dd>&nbsp<%= @invoice.date.strftime("%d/%m/%Y") %></dd>
+  <dd>&nbsp<%= @invoice.date.to_s(:human) %></dd>
   <dt><strong>Invoice #:</strong><dt>
   <dd>&nbsp<%= @invoice.id %></dd>
   <div class="pan_number">Cybrilla Technologies Private Limited</br> PAN NUMBER :: AAECC1405A

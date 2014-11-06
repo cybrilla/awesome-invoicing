@@ -74,7 +74,9 @@ class ClientsController < ApplicationController
   # DELETE /clients/1.json
   def destroy
     @client = Client.find(params[:id])
-    @client.destroy
+    if !@client.invoices.present?
+      @client.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to clients_url }
